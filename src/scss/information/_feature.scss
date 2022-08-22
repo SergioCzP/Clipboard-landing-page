@@ -1,0 +1,54 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.feature {
+  @include m.medium {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @include m.medium {
+      object-fit: contain;
+    }
+  }
+
+  &__flex {
+    @include m.medium {
+      padding: 0 10rem 0 5rem;
+    }
+
+    @include m.large {
+      padding: 0 15rem 0 10rem;
+    }
+
+    @include m.extra-large {
+      padding: 0 26rem 0 10rem;
+    }
+  }
+
+  &__heading {
+    margin: 6rem 0 2rem;
+
+    @include m.medium {
+      text-align: left;
+      margin: 7rem 0 2rem;
+    }
+  }
+
+  &__text {
+    margin: 0;
+
+    @include m.medium {
+      text-align: left;
+
+      &:last-of-type {
+        margin-bottom: 10rem;
+      }
+    }
+  }
+}

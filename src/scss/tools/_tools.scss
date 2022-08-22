@@ -1,0 +1,64 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.tools {
+  max-width: 42rem;
+  padding: 7rem 3rem 6rem;
+  margin: 0 auto;
+
+  @include m.medium {
+    padding: 8rem;
+    max-width: 144rem;
+  }
+
+  @include m.extra-large {
+    padding: 8rem 17rem;
+  }
+
+  &__heading {
+    margin: 0 0 2rem;
+
+    @include m.medium {
+      margin: 0 0 4rem;
+    }
+
+    @include m.large {
+      padding: 0 18rem;
+    }
+  }
+
+  &__text {
+    margin: 0 0 8rem;
+
+    @include m.large {
+      padding: 0 18rem;
+    }
+  }
+
+  &__grid {
+    @include m.medium {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 3.5rem;
+    }
+  }
+
+  &__image {
+    margin: 0 auto;
+    width: 4.5rem;
+    height: 4.5rem;
+    object-fit: contain;
+  }
+
+  &__title {
+    margin: 5rem 0 3rem;
+  }
+
+  &__paragraph {
+    margin: 0 0 5rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

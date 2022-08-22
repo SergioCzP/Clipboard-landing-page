@@ -1,0 +1,58 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.download {
+  max-width: 42rem;
+  padding: 8.5rem 3rem 17rem;
+  margin: 0 auto;
+
+  @include m.medium {
+    padding: 8rem 8rem 15rem;
+    max-width: 144rem;
+  }
+
+  @include m.large {
+    padding: 8rem 18rem 15rem;
+  }
+
+  @include m.extra-large {
+    padding: 8rem 32rem 15rem;
+  }
+
+  @include m.max-large {
+    padding: 8rem 37rem 15rem;
+  }
+
+  &__heading {
+    margin: 0 0 3rem;
+  }
+
+  &__text {
+    margin: 0 0 5rem;
+  }
+
+  &__flex {
+    display: flex;
+    flex-direction: column;
+
+    @include m.medium {
+      flex-direction: row;
+      justify-content: center;
+      column-gap: 2rem;
+    }
+  }
+
+  &__link {
+    @include m.medium {
+      max-width: 23rem;
+    }
+
+    @include m.btn(v.$strong-cyan);
+    margin-bottom: 2.5rem;
+
+    &:last-of-type {
+      @include m.btn(v.$light-blue);
+      margin-bottom: 0;
+    }
+  }
+}

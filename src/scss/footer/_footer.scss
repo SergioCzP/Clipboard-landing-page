@@ -1,0 +1,59 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.footer {
+  padding: 5.5rem 3rem;
+  background-color: lighten(v.$grayish-blue, $amount: 30);
+
+  &__wraper {
+    @include m.medium {
+      display: grid;
+      grid-template-columns: 0.5fr 1.5fr 1.5fr;
+      align-items: center;
+      gap: 5rem;
+    }
+  }
+
+  &__logo {
+    margin: 0 auto;
+    width: 6rem;
+    height: 6rem;
+    object-fit: contain;
+  }
+
+  &__grid {
+    display: grid;
+    justify-items: start;
+    gap: 3rem;
+    margin-top: 5rem;
+
+    @include m.medium {
+      margin: 0;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 2rem;
+      align-items: center;
+    }
+  }
+
+  &__link {
+    color: v.$dark-grayish-blue;
+    transition: color 300ms ease;
+
+    @include m.medium {
+      &:nth-child(2) {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+      }
+
+      &:nth-child(4) {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+      }
+    }
+
+    &:hover {
+      color: v.$strong-cyan;
+    }
+  }
+}

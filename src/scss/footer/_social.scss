@@ -1,0 +1,22 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 5rem;
+
+  @include m.medium {
+    margin: 0;
+  }
+
+  &__icon {
+    cursor: pointer;
+
+    &:hover .social__path {
+      fill: v.$strong-cyan;
+    }
+  }
+}

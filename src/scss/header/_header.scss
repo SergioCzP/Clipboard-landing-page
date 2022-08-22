@@ -1,0 +1,90 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.header {
+  background-image: url("../images/bg-header-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 12rem 3rem 8.5rem;
+  max-width: 42rem;
+  margin: 0 auto;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    // background: rgb(255, 255, 255);
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.25) 100%
+    );
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  @include m.medium {
+    background-image: url("../images/bg-header-desktop.png");
+    max-width: 144rem;
+    padding: 13rem 10rem 8rem;
+  }
+
+  @include m.large {
+    padding: 13rem 18rem 8rem;
+  }
+
+  @include m.extra-large {
+    padding: 13rem 35rem 8rem;
+  }
+
+  @include m.max-large {
+    padding: 13rem 37rem 8rem;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__logo {
+    margin: 0 auto;
+    width: 13rem;
+    height: 13rem;
+  }
+
+  &__heading {
+    font-size: 3.2rem;
+    margin: 7rem 0 2rem;
+  }
+
+  &__paragraph {
+    margin: 0 0 5rem;
+  }
+
+  &__flex {
+    display: flex;
+    flex-direction: column;
+
+    @include m.medium {
+      flex-direction: row;
+      justify-content: center;
+      gap: 2rem;
+    }
+  }
+
+  &__download {
+    &:first-of-type {
+      @include m.btn(v.$strong-cyan);
+      margin-bottom: 2.5rem;
+    }
+
+    &:last-of-type {
+      @include m.btn(v.$light-blue);
+    }
+
+    @include m.medium {
+      max-width: 23rem;
+    }
+  }
+}

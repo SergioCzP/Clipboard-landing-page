@@ -1,0 +1,38 @@
+@use "base/variables" as v;
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: v.$font;
+  font-size: 1.8rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  color: v.$dark-grayish-blue;
+  text-align: center;
+}
+
+p {
+  color: v.$grayish-blue;
+  text-align: center;
+  line-height: 1.5;
+}

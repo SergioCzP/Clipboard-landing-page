@@ -1,0 +1,35 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.brands {
+  max-width: 42rem;
+  padding: 6rem 3rem 8.5rem;
+  margin: 0 auto;
+
+  @include m.medium {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 5rem;
+    padding: 8rem;
+    max-width: 144rem;
+  }
+
+  @include m.extra-large {
+    padding: 8rem 16rem;
+  }
+
+  &__logo {
+    margin: 0 auto 7rem;
+    width: 15rem;
+    height: 4rem;
+    object-fit: contain;
+
+    @include m.medium {
+      margin: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.author {
+  padding: 3rem 3rem 0;
+
+  &__attribution {
+    margin: 0;
+  }
+
+  &__link {
+    color: v.$dark-grayish-blue;
+    font-weight: 600;
+    transition: color 300ms ease;
+
+    &:hover {
+      color: v.$light-blue;
+    }
+  }
+}
